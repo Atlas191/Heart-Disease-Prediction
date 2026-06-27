@@ -16,18 +16,18 @@ patient was diagnosed with heart disease (1) or not (0).
 
 I started by getting to know the data before touching any model:
 
-- I checked the **shape, data types, and summary statistics** to understand what
+- Checked the **shape, data types, and summary statistics** to understand what
   I was working with.
-- I confirmed there were **no missing values and no duplicate rows**.
-- I plotted **histograms** for the numeric features (Age, RestingBP, Cholesterol,
+-  Confirmed there were **no missing values and no duplicate rows**.
+- Plotted **histograms** for the numeric features (Age, RestingBP, Cholesterol,
   MaxHR, Oldpeak) and checked their **skewness** to see how they were distributed.
-- I drew **count plots** for the categorical features to see how the categories
+- Drew **count plots** for the categorical features to see how the categories
   were balanced.
-- I compared features against the target using **count plots** (for example
+- Compared features against the target using **count plots** (for example
   ChestPainType vs HeartDisease) to spot which features looked predictive.
 - I built a **correlation heatmap** to see how the numeric features related to
   each other.
-- I used **box plots** to look for outliers in the numeric columns.
+- Used **box plots** to look for outliers in the numeric columns.
 
 ## Step 2 — Cleaning the Data
 
@@ -41,13 +41,13 @@ While exploring, I noticed two problems and fixed them:
 
 ## Step 3 — Preparing the Features
 
-- I **one-hot encoded** the categorical columns using `pd.get_dummies` with
+- I did **one-hot encoded** the categorical columns using `pd.get_dummies` with
   `drop_first=True` to avoid redundant columns.
-- I **converted the resulting boolean columns to integers** (0/1) so the models
+- **Converted the resulting boolean columns to integers** (0/1) so the models
   could use them.
-- I split the data into **features (X) and target (y)**, then into **80% training
+- Split the data into **features (X) and target (y)**, then into **80% training
   and 20% testing** sets.
-- I **scaled the features** with `StandardScaler`, since distance-based models
+- **Scaled the features** with `StandardScaler`, since distance-based models
   like KNN and SVM are sensitive to feature scale.
 
 ## Step 4 — Training and Tuning Each Model
